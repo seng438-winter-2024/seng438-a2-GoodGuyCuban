@@ -10,7 +10,7 @@ import org.junit.Test;
 public class DataUtilitiesCreateNumberArrayTest {
 
     // Test createNumberArray method
-
+    // testing for one positive value
     @Test
     public void testCreateNumberArray_ForOnePositiveValue() {
         double[] data = {1.7};
@@ -18,6 +18,7 @@ public class DataUtilitiesCreateNumberArrayTest {
         assertArrayEquals(expected, DataUtilities.createNumberArray(data));
     }
     
+    // testing for two negative value
     @Test
     public void testCreateNumberArray_ForTwoNegativeValue() {
     	double[] data = {-6.23, -543.76};
@@ -25,6 +26,7 @@ public class DataUtilitiesCreateNumberArrayTest {
     	assertArrayEquals(expected, DataUtilities.createNumberArray(data));
     }
     
+    // testing for three positive value
     @Test
     public void testCreateNumberArray_ThreePositive() {
     	double[] data = {1.0, 2.0, 3.0};
@@ -32,6 +34,7 @@ public class DataUtilitiesCreateNumberArrayTest {
     	assertArrayEquals(expected, DataUtilities.createNumberArray(data));
     }
     
+    // testing for large number of values
     @Test
     public void testCreateNumberArray_ForSixtyNineNumbers() {
     	double[] data = new double[69];
@@ -43,6 +46,7 @@ public class DataUtilitiesCreateNumberArrayTest {
     	assertArrayEquals(expected, DataUtilities.createNumberArray(data));
     }
 
+    // testing for empty input array
     @Test
     public void testCreateNumberArray_EmptyInput() {
         double[] data = {};
@@ -50,12 +54,14 @@ public class DataUtilitiesCreateNumberArrayTest {
         assertArrayEquals(expected, DataUtilities.createNumberArray(data));
     }
 
+    // testing for invalid input
     @Test(expected = InvalidParameterException.class)
     public void testCreateNumberArray_InvalidInput() {
         double[] data = {Double.NaN, Double.POSITIVE_INFINITY};
         DataUtilities.createNumberArray(data);
     }
 
+    // testing for boundary values (min and max values of double type)
     @Test
     public void testCreateNumberArray_BoundaryValues() {
         double[] data = {Double.MIN_VALUE, Double.MAX_VALUE};
