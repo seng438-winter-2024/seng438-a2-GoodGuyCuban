@@ -17,6 +17,68 @@ Text…
 
 // including the input partitions you have designed
 
+Our unit test strategy for the Range class in JFreeChart focused on these 6 functionalities: checking for intersections (intersects method), expanding ranges (expand method), and calculating the length of a range (getLength method) … **ADD ABES HERE.** To ensure the completeness of our test we employed Equivalence Class Testing (ECT) and Boundary Value Testing (BVT) principles when designing our inputs. Below are the details regarding our input partitions and the rationale behind their selection.
+
+**Range Intersect Test** 
+
+**Equivalence Class Testing (ECT):**
+
+*   **Intersecting Ranges:** This input partition is where the test range clearly intersects with specified bounds. This test ensures the method correctly identifies overlapping ranges.
+    
+
+*   **Non-Intersecting Ranges:** This input partition is where the range is completely outside the specified bounds. The test ensures the method correctly detects non-overlapping ranges from upper and lower bounds.
+    
+
+*   **Edge-Case Intersections:** This input partition is the cases of ranges that touch the edges of the specified bounds without overlapping.
+    
+
+**Boundary Value Testing (BVT):**
+
+*   **Just Inside Bounds**: These test case scenarios cover when the range barely intersects with the bounds, testing if the method detects minimal overlaps. 
+    
+
+*   **Just Outside Bounds**: These test case scenarios cover when the range is barely outside the specified bounds. This tests the precision of the method in returning the correct value for non-intersecting ranges close to our tested range.
+    
+
+**Range Expand Test**
+
+**Equivalence Class Testing (ECT):**
+
+**Valid Positive Margins**: This input partition is for most cases, we tested with valid positive values for lower and upper margins to make sure general range expansion is worse.
+
+**Zero Margins**: Zero values for margins should result in no expansion and so this input partition acts like a control group.
+
+**Negative Margins**: This input partition is for invalid input. Negative margins should not be accepted, so our method should throw an exception.
+
+**Boundary Value Testing (BVT):**
+
+**Minimal Positive Margins**: By testing very small positive margins, we look at the method's behaviour in expanding by a very small percentage.
+
+**Large Positive Margins**: This tests the method's capability to handle significant range expansions without errors.
+
+**Exact Boundaries**: We also test that the method expands the range to exact and expected values, ensuring bounds are correctly calculated and arbitrary lower or higher bounds are not assigned.
+
+**RangeGetLengthTest**
+
+**Equivalence Class Testing (ECT):**
+
+*   **Positive Range:** This input partition is a range with a positive length representing the typical scenario.
+    
+
+*   **Zero-length Range:** This input partition is for ranges where the lower and upper bounds are equal which ensures the method correctly handles ranges with no length
+    
+
+*   **Range Spanning from Negative to Positive:**  This input partition looks at the method's ability to calculate lengths across negative and positive bounds accurately.
+    
+
+**Boundary Value Testing (BVT):**
+
+**Minimal Positive Range**: This input partition looks at the method's ability to calculate the length of very small positive ranges ensuring precision.
+
+**Large Range**: This input partition checks the method's ability to handle large values accurately.
+
+## NEED TO ADD ABES TESTS HERE
+
 # 3 Test cases developed
 
 Text…
@@ -25,9 +87,141 @@ Text…
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
 
+**Org.Jfree.data.Range**
+
+**Class: RangeGetLengthTest**
+
+**Test Method: testGetLengthWithVariousRanges**
+
+For this test, we employed the use of parameterized classes to collectively address both ECT and BVT and reduce code bloating. Each test targets a unique input partition.
+
+**Partitions Covered**:
+
+**Positive Range (ECT)**: Tested by {1, 10, 9}.
+
+**Zero-length Range(ECT)**: Tested by {5, 5, 0}.
+
+**Range Spanning from Negative to Positive(ECT)**: Tested by {-1, 1, 2}.
+
+**Minimal Positive Range (BVT)**: Tested by {5, 5.00001, 0.00001}.
+
+**Large Range (BVT)**: Tested by {-1000000, 1000000, 2000000}.
+
+**Class RangeExpandTest**
+
+**setUp() Method:**
+
+Initializes originalRange with a fixed range of 10 to 20 before each test.
+
+**tearDown() Method:**
+
+Sets originalRange to null after each test for cleanup.
+
+**Test Methods:**
+
+**expand\_WithValidPositiveMargins\_ShouldExpandRangeProperly**
+
+*   Partition Covered (ECT): Valid positive margins.
+    
+
+**expand\_WithZeroMargins\_ShouldNotChangeRange**
+
+*   Partition Covered (ECT): Zero margins.
+    
+
+**expand\_WithNegativeMargins\_ShouldThrowError**
+
+*   Partition Covered (ECT): Invalid Argument
+    
+
+**expand\_MinimalPositiveMargins\_ShouldSlightlyExpandRange**
+
+*   Partition Covered (BVT): Minimal positive margins.
+    
+
+**expand\_LargePositiveMargins\_ShouldSignificantlyExpandRange**
+
+*   Partition Covered (BVT): Large positive margins
+    
+
+**Class: RangeIntersectsTest**
+
+**setUp() Method**: Initializes testRange with a fixed range of 10 to 20 before each test.
+
+**tearDown() Method**: Resets testRange to null after each test for cleanup
+
+**Test Methods:**
+
+**intersects\_WithFullyInsideRange\_ShouldReturnTrue**
+
+*   Partition Covered (ECT): Intersecting Ranges.
+    
+
+**intersects\_WithFullyOutsideRange\_LowerSide\_ShouldReturnFalse**
+
+*   Partition Covered (ECT): Non-Intersecting Ranges (Outside) on the lower side.
+    
+
+Ensures that ranges completely outside the lower bound of the test range are identified as not intersecting.
+
+**intersects\_WithFullyOutsideRange\_UpperSide\_ShouldReturnFalse**
+
+*   Partition Covered (ECT): Non-Intersecting Ranges (Outside) on the upper side.
+    
+*   Verifies that ranges completely outside the upper bound of the test range are recognized as not intersecting.
+    
+
+**intersects\_WithOverlappingRange\_LowerBound\_ShouldReturnTrue**
+
+*   Partition Covered (ECT/BVT): Edge-Case Intersections and Just Inside Bounds.
+    
+*   Verifies that ranges overlapping the lower boundary of the test range are accurately detected as intersecting.
+    
+
+**intersects\_WithOverlappingRange\_UpperBound\_ShouldReturnTrue**
+
+*   Partition Covered (ECT/BVT): Edge-Case Intersections and Just Inside Bounds.
+    
+*   Verifies that ranges overlapping the upper boundary of the test range are correctly identified as intersecting.
+    
+
+**intersects\_WithExactMatchRange\_ShouldReturnTrue**
+
+*   Partition Covered (ECT): Intersecting Ranges (Exact Match).
+    
+*   Verifies that a range exactly matching the test range is identified as intersecting.
+    
+
+**intersects\_JustInsideLowerBound\_ShouldReturnTrue**
+
+*   Partition Covered (BVT): Just Inside Bounds.
+    
+*   Verifies that a range barely inside the lower boundary is correctly flagged as intersecting.
+    
+
+**intersects\_JustInsideUpperBound\_ShouldReturnTrue**
+
+*   Partition Covered (BVT): Just Inside Bounds.
+    
+*   Verifies that a range barely inside the upper boundary is accurately recognized as intersecting.
+    
+
+**intersects\_JustOutsideLowerBound\_ShouldReturnFalse**
+
+*   Partition Covered (BVT): Just Outside Bounds.
+    
+*   Verifies that a range just outside the lower boundary is identified as not intersecting.
+    
+
+**intersects\_JustOutsideUpperBound\_ShouldReturnFalse**
+
+*   Partition Covered (BVT): Just Outside Bounds.
+    
+*   Verifies that a range just outside the upper boundary is recognized as not intersecting.
+
 # 4 How the team work/effort was divided and managed
 
-Text…
+We liked the idea of pair testing from the last lab and decided to conduct our test in pairs for this lab as well. We split ourselves into groups of 2 and assigned one group to test the Range class and another group to test the DataUtilities Class. In these groups, each member evaluated three methods, guaranteeing that, upon completion of all tests, we achieved coverage for at least five methods per class.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
