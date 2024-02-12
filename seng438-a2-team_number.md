@@ -93,7 +93,7 @@ you have explained in the test strategy section //above
 
 **Test Method: testGetLengthWithVariousRanges**
 
-For this test, we employed the use of parameterized classes to collectively address both ECT and BVT and reduce code bloating. Each test targets a unique input partition.
+For this test, we employed the use of parameterized classes to collectively address both ECT and BVT as well as to reduce code bloating. Each test targets a unique input partition.
 
 **Partitions Covered**:
 
@@ -221,7 +221,7 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 # 4 How the team work/effort was divided and managed
 
-We liked the idea of pair testing from the last lab and decided to conduct our test in pairs for this lab as well. We split ourselves into groups of 2 and assigned one group to test the Range class and another group to test the DataUtilities Class. In these groups, each member evaluated three methods, guaranteeing that, upon completion of all tests, we achieved coverage for at least five methods per class.
+We liked the idea of pair testing from the last lab and decided to conduct our test in pairs for this lab as well. We split ourselves into groups of 2 and assigned one group to test the Range class and another group to test the DataUtilities Class. In these groups, each member evaluated three methods, guaranteeing that, upon completion of all tests, we achieved coverage for at least five methods per class. An important lesson we learnt was how much easier testing is when work is split up.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
