@@ -80,38 +80,7 @@ Our unit test strategy for the Range class in JFreeChart focused on these 6 func
 
 - **Large Range**: This input partition checks the method's ability to handle large values accurately.
 
-### Range GetUpperBound Test
-
-**Equivalence Class Testing (ECT):**
-
-- **Positive Infinity:** This input partition verifies if the method returns positive infinity when the upper bound is set to Double.POSITIVE_INFINITY.
-
-- **Non-Empty Range:** This input partition ensures that the method correctly returns the upper bound for a non-empty range.
-
-**Boundary Value Testing (BVT):**
-
-- **Boundary Upper**: This input partition tests if the method returns the correct upper bound when it is exactly at the boundary value.
-  
-- **Boundary Just Above Upper**: This input partition tests if the method returns the correct upper bound when it is just above the boundary value.
-  
-- **Boundary Just Below Upper**: This input partition tests if the method returns the correct upper bound when it is just below the boundary value.
-
-
-### Range GetLowerBound Test
-
-**Equivalence Class Testing (ECT):**
-
-- **Negative Infinity:** This input partition verifies if the method returns negative infinity when the lower bound is set to Double.NEGATIVE_INFINITY.
-
-- **Non-Empty Range:** This input partition ensures that the method correctly returns the lower bound for a non-empty range.
-
-**Boundary Value Testing (BVT):**
-
-- **Boundary Lower**: This input partition tests if the method returns the correct lower bound when it is exactly at the boundary value.
-  
-- **Boundary Just Above Lower**: This input partition tests if the method returns the correct lower bound when it is just above the boundary value.
-  
-- **Boundary Just Below Lower**: This input partition tests if the method returns the correct lower bound when it is just below the boundary value.
+## NEED TO ADD ABES TESTS HERE
 
 ## Data Utilities
 While testing the functionality of the class methods, we again employed Equivalence Class Testing (ECT) and Boundary Value Testing (BVT) principles when designing our inputs. Below are the details regarding our input partitions and the rationale behind their selection.
@@ -299,7 +268,71 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 ### Class: DataUtilitiesCalculateColumnTotalTests
 
-**Test Method**
+**Test Methods:**
+
+**calculateColumnTotal_ForOnePositiveValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForTwoPositiveValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForThreeNegativeValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForFourMixedValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForManyRows**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_WithNullValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForEmptyMatrix**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_WithLargeIndex**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForOutOfBoundsIndexBelow**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+**calculateColumnTotal_ForOutOfBoundsIndexAbove**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+### Class: DataUtilitiesCreateNumberArray2DTest
+
+**Test Methods:**
+
+**calculateColumnTotal_ForOnePositiveValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+### Class: DataUtilitiesCreateNumberArrayTest
+
+**Test Methods:**
+
+**calculateColumnTotal_ForOnePositiveValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
+
+### Class: DataUtilitiesGetCumulativePercentagesTests
+
+**Test Methods:**
+
+**calculateColumnTotal_ForOnePositiveValues**
+
+- Partition Covered (ECT): MAKE STUFF UP
 
 # 4 How the team work/effort was divided and managed
 
