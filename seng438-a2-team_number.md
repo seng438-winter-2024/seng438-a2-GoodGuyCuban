@@ -126,8 +126,6 @@ Since both of these methods cover similar functionality, and our test strategies
 
 # 3 Test cases developed
 
-Text…
-
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
@@ -139,6 +137,8 @@ you have explained in the test strategy section //above
 **Test Method: testGetLengthWithVariousRanges**
 
 For this test, we employed the use of parameterized classes to collectively address both ECT and BVT and reduce code bloating. Each test targets a unique input partition.
+
+ALL TEST CASES PASSED
 
 **Partitions Covered**:
 
@@ -162,9 +162,11 @@ Initializes originalRange with a fixed range of 10 to 20 before each test.
 
 Sets originalRange to null after each test for cleanup.
 
+**Unless Specified assume a test case passes** 
+
 **Test Methods:**
 
-**expand\_WithValidPositiveMargins\_ShouldExpandRangeProperly**
+**expand\_WithValidPositiveMargins\_ShouldExpandRangeProperly (FAILED)**
 
 *   Partition Covered (ECT): Valid positive margins.
     
@@ -179,7 +181,7 @@ Sets originalRange to null after each test for cleanup.
 *   Partition Covered (ECT): Invalid Argument
     
 
-**expand\_MinimalPositiveMargins\_ShouldSlightlyExpandRange**
+**expand\_MinimalPositiveMargins\_ShouldSlightlyExpandRange (FAILED)**
 
 *   Partition Covered (BVT): Minimal positive margins.
     
@@ -202,7 +204,7 @@ Sets originalRange to null after each test for cleanup.
 *   Partition Covered (ECT): Intersecting Ranges.
     
 
-**intersects\_WithFullyOutsideRange\_LowerSide\_ShouldReturnFalse**
+**intersects\_WithFullyOutsideRange\_LowerSide\_ShouldReturnFalse(FAILED)**
 
 *   Partition Covered (ECT): Non-Intersecting Ranges (Outside) on the lower side.
     
@@ -223,7 +225,7 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 *   Verifies that ranges overlapping the lower boundary of the test range are accurately detected as intersecting.
     
 
-**intersects\_WithOverlappingRange\_UpperBound\_ShouldReturnTrue**
+**intersects\_WithOverlappingRange\_UpperBound\_ShouldReturnTrue(FAILED)**
 
 *   Partition Covered (ECT/BVT): Edge-Case Intersections and Just Inside Bounds.
     
@@ -244,14 +246,14 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 *   Verifies that a range barely inside the lower boundary is correctly flagged as intersecting.
     
 
-**intersects\_JustInsideUpperBound\_ShouldReturnTrue**
+**intersects\_JustInsideUpperBound\_ShouldReturnTrue(FAILED)**
 
 *   Partition Covered (BVT): Just Inside Bounds.
     
 *   Verifies that a range barely inside the upper boundary is accurately recognized as intersecting.
     
 
-**intersects\_JustOutsideLowerBound\_ShouldReturnFalse**
+**intersects\_JustOutsideLowerBound\_ShouldReturnFalse(FAILED)**
 
 *   Partition Covered (BVT): Just Outside Bounds.
     
