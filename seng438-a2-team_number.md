@@ -193,6 +193,8 @@ Sets originalRange to null after each test for cleanup.
 
 ### Class: RangeIntersectsTest
 
+**Unless Specified assume a test case passes** 
+
 **setUp() Method**: Initializes testRange with a fixed range of 10 to 20 before each test.
 
 **tearDown() Method**: Resets testRange to null after each test for cleanup
