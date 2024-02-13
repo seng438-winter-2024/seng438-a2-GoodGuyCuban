@@ -76,6 +76,40 @@ Our unit test strategy for the Range class in JFreeChart focused on these 6 func
 - **Minimal Positive Range**: This input partition looks at the method's ability to calculate the length of very small positive ranges ensuring precision.
 
 - **Large Range**: This input partition checks the method's ability to handle large values accurately.
+  
+
+### Range GetUpperBound Test
+
+**Equivalence Class Testing (ECT):**
+
+- **Positive Infinity:** This input partition verifies if the method returns positive infinity when the upper bound is set to Double.POSITIVE_INFINITY.
+
+- **Non-Empty Range:** This input partition ensures that the method correctly returns the upper bound for a non-empty range.
+
+- **Boundary Value Testing (BVT):**
+
+- **Boundary Upper**: This input partition tests if the method returns the correct upper bound when it is exactly at the boundary value.
+  
+- **Boundary Just Above Upper**: This input partition tests if the method returns the correct upper bound when it is just above the boundary value.
+  
+- **Boundary Just Below Upper**: This input partition tests if the method returns the correct upper bound when it is just below the boundary value.
+
+
+### Range GetLowerBound Test
+
+**Equivalence Class Testing (ECT):**
+
+- **Negative Infinity:** This input partition verifies if the method returns negative infinity when the lower bound is set to Double.NEGATIVE_INFINITY.
+
+- **Non-Empty Range:** This input partition ensures that the method correctly returns the lower bound for a non-empty range.
+
+**Boundary Value Testing (BVT):**
+
+- **Boundary Lower**: This input partition tests if the method returns the correct lower bound when it is exactly at the boundary value.
+  
+- **Boundary Just Above Lower**: This input partition tests if the method returns the correct lower bound when it is just above the boundary value.
+  
+- **Boundary Just Below Lower**: This input partition tests if the method returns the correct lower bound when it is just below the boundary value.
 
 ## Data Utilities
 
