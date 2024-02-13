@@ -368,61 +368,61 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**calculateColumnTotal_ForOnePositiveValues**
+**calculateColumnTotal_ForOnePositiveValues** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a single row of data can be summed. 
 
-**calculateColumnTotal_ForTwoPositiveValues**
+**calculateColumnTotal_ForTwoPositiveValues** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that two rows of data can be summed. 
 
-**calculateColumnTotal_ForThreeNegativeValues**
+**calculateColumnTotal_ForThreeNegativeValues** (PASSED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that negatives may be summed. 
 
-**calculateColumnTotal_ForFourMixedValues**
+**calculateColumnTotal_ForFourMixedValues** (PASSED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that many mixed types of data are summed. 
 
-**calculateColumnTotal_ForManyRows**
+**calculateColumnTotal_ForManyRows** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a large number of rows may be summed. 
 
-**calculateColumnTotal_WithNullValues**
+**calculateColumnTotal_WithNullValues** (FAILED)
 
 - Partition Covered (ECT): Invalid Input Data.
 
 - Verifies that the sum is aborted, outputting zero.  
 
-**calculateColumnTotal_ForEmptyMatrix**
+**calculateColumnTotal_ForEmptyMatrix** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
 
 - Verifies that an empty Values2D sums to zero. 
 
-**calculateColumnTotal_WithLargeIndex**
+**calculateColumnTotal_WithLargeIndex** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
 
 - Verifies that it sums correctly at large indexes.
 
-**calculateColumnTotal_ForOutOfBoundsIndexBelow**
+**calculateColumnTotal_ForOutOfBoundsIndexBelow** (FAILED)
 
 - Partition Covered (BVT): Just Outside Bounds. 
 
 - Verifies that the sum is aborted, outputting zero.  
 
-**calculateColumnTotal_ForOutOfBoundsIndexAbove**
+**calculateColumnTotal_ForOutOfBoundsIndexAbove** (FAILED)
 
 - Partition Covered (BVT): Just Outside Bounds. 
 
@@ -431,61 +431,61 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**CalculateRowTotal_ForOnePositiveValues**
+**CalculateRowTotal_ForOnePositiveValues** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a single row of data can be summed. 
 
-**CalculateRowTotal_ForTwoPositiveValues**
+**CalculateRowTotal_ForTwoPositiveValues** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that two rows of data can be summed. 
 
-**CalculateRowTotal_ForThreeNegativeValues**
+**CalculateRowTotal_ForThreeNegativeValues** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that negatives may be summed. 
 
-**CalculateRowTotal_ForFourMixedValues**
+**CalculateRowTotal_ForFourMixedValues** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that many mixed types of data are summed. 
 
-**CalculateRowTotal_ForManyRows**
+**CalculateRowTotal_ForManyRows** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a large number of rows may be summed. 
 
-**CalculateRowTotal_WithNullValues**
+**CalculateRowTotal_WithNullValues** (FAILED)
 
 - Partition Covered (ECT): Invalid Input Data.
 
 - Verifies that the sum is aborted, outputting zero.  
 
-**CalculateRowTotal_ForEmptyMatrix**
+**CalculateRowTotal_ForEmptyMatrix** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
 
 - Verifies that an empty Values2D sums to zero. 
 
-**CalculateRowTotal_WithLargeIndex**
+**CalculateRowTotal_WithLargeIndex** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
 
 - Verifies that it sums correctly at large indexes.
 
-**CalculateRowTotal_ForOutOfBoundsIndexBelow**
+**CalculateRowTotal_ForOutOfBoundsIndexBelow** (PASSED)
 
 - Partition Covered (BVT): Just Outside Bounds. 
 
 - Verifies that the sum is aborted, outputting zero.  
 
-**CalculateRowTotal_ForOutOfBoundsIndexAbove**
+**CalculateRowTotal_ForOutOfBoundsIndexAbove** (PASSED)
 
 - Partition Covered (BVT): Just Outside Bounds. 
 
@@ -511,45 +511,43 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**getCumulativePercentages_ForOneValue**
+**getCumulativePercentages_ForOneValue** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a single value is properly calculated to percent. 
 
-**getCumulativePercentages_ForTwoNegativeValues**
+**getCumulativePercentages_ForTwoNegativeValues** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that two values are properly calculated to percent. 
 
-**getCumulativePercentages_ForThreePositiveValues**
+**getCumulativePercentages_ForThreePositiveValues** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that three values are properly calculated to percent. 
 
-**getCumulativePercentages_ForFourMixedValues**
+**getCumulativePercentages_ForFourMixedValues** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data.
 
 - Verifies that four mixed values are properly calculated to percent. 
 
-**getCumulativePercentages_ForLargeData**
+**getCumulativePercentages_ForLargeData** (FAILED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that a large number of values are properly calculated to percent. 
 
-**getCumulativePercentages_WithEmptyData**
+**getCumulativePercentages_WithEmptyData** (PASSED)
 
 - Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
 - Verifies that an empty KeyedValues is properly calculated to being empty. 
 
-# 4 How the team work/effort was divided and managed
-
-**getCumulativePercentages_WithNullEntries**
+**getCumulativePercentages_WithNullEntries** (FAILED)
 
 - Partition Covered (ECT/BVT): Invalid Input Data, Just Outside Bounds.
 
@@ -562,13 +560,8 @@ We then evaluated our partner's test methods, ensuring that the tests adhered to
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
-I wanna talk about the pain of Mocks in here. 
-
 A big challenge we were able to overcome was finding time to come together and discuss the tests each of us created, because communication is very important in the teamwork process this was a challenge we had to overcome. We also had initial difficulties understanding mocking but as we began to write our tests the reason for mocking became clearer and our understanding of the concept got better.
 
 # 6 Comments/feedback on the lab itself
 
-Text…
-They shoulda told us more about how to use Mocks. 
-We found the lab document to be confusing for certain sections, particularly for the demo section and the requirements of the testing. For example, we found it unclear whether each student needed to demo a mocking test or if we needed to demo mocking tests in general. Other than that the lab did a good job in teaching the basics of mocking and writing ECT and BVT based tests.
+We found the lab document to be confusing for certain sections, particularly for the demo section and the requirements of the testing. For example, we found it unclear whether each student needed to demo a mocking test or if we needed to demo mocking tests in general. As well, we wished the lab had discussed a little more about mocking, as it was difficult to connect the concept of mocking from lectures to implementing it given only a single example which had no explanation. Other than that the lab did a good job in teaching the basics of writing ECT and BVT based tests. 
