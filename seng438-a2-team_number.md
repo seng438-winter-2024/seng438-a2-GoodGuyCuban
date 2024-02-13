@@ -268,6 +268,100 @@ Ensures that ranges completely outside the lower bound of the test range are ide
     
 *   Verifies that a range just outside the upper boundary is recognized as not intersecting.
 
+### RangeGetLowerBoundTest
+
+**Test Methods:**
+
+**getLowerBound_WithValidRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Lower bound of the range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for a valid range.
+
+**getLowerBound_WithNegativeInfinity_ReturnsNegativeInfinity (PASSED)**
+
+*   Partition Covered (ECT): Lower bound of the range.
+    
+*   Verifies that the getLowerBound() method returns negative infinity when the lower bound is set to Double.NEGATIVE_INFINITY.
+
+**testGetLowerBoundNonEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Non-empty range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for a non-empty range.
+
+**testGetLowerBoundEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Empty range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for an empty range.
+
+**testGetLowerBoundBoundaryLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is exactly at the boundary value.
+
+**testGetLowerBoundBoundaryJustAboveLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary just above lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is just above the boundary value.
+
+**testGetLowerBoundBoundaryJustBelowLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary just below lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is just below the boundary value.
+
+
+### RangeGetUpperBoundTest
+
+**Test Methods:**
+
+**getUpperBound_WithValidRange_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Upper bound of the range.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound for a valid range.
+
+**getUpperBound_WithPositiveInfinity_ReturnsPositiveInfinity (FAILED)**
+
+*   Partition Covered (ECT): Upper bound of the range.
+    
+*   Verifies that the getUpperBound() method returns positive infinity when the upper bound is set to Double.POSITIVE_INFINITY.
+
+**testGetUpperBoundNonEmptyRange_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (ECT): Non-empty range.
+    
+*   Ensures that the getUpperBound() method returns the correct upper bound for a non-empty range.
+
+**testGetUpperBoundEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Empty range.
+    
+*   Ensures that the getUpperBound() method returns the correct upper bound for an empty range.
+
+**testGetUpperBoundBoundaryUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is exactly at the boundary value.
+
+**testGetUpperBoundBoundaryJustAboveUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary just above upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is just above the boundary value.
+
+**testGetUpperBoundBoundaryJustBelowUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary just below upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is just below the boundary value.
+
+
 ## Org.Jfree.data.DataUtilities
 
 ### Class: DataUtilitiesCalculateColumnTotalTests
