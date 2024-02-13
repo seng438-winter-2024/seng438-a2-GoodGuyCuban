@@ -12,11 +12,17 @@
 
 # 1 Introduction
 
-Text…
+In this assignment, we created a JUnit test suite for two classes in JFree. Our creation process for the Range and DataUtilities class tests followed four phases:
+
+1. Familiarization of class methods.
+2. Generating unit test strategies. 
+3. Generating and writing test cases.
+4. Peer review and compilation of test suite. 
+
+This lab report compiles our unit testing strategies and the test cases that followed, including their results. 
+
 
 # 2 Detailed description of unit test strategy
-
-// including the input partitions you have designed
 
 ## Range
 
