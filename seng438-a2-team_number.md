@@ -25,7 +25,7 @@ This lab report compiles our unit testing strategies and the test cases that fol
 
 ## Range
 
-Our unit test strategy for the Range class in JFreeChart focused on these 6 functionalities: checking for intersections (intersects method), expanding ranges (expand method), and calculating the length of a range (getLength method) … **ADD ABES HERE.** To ensure the completeness of our test we employed Equivalence Class Testing (ECT) and Boundary Value Testing (BVT) principles when designing our inputs. Below are the details regarding our input partitions and the rationale behind their selection.
+Our unit test strategy for the Range class in JFreeChart focused on these 6 functionalities: checking for intersections (intersects method), expanding ranges (expand method), calculating the length of a range (getLength method), and calculating both the upper and lower bound of a range (getUpperBound and getLowerBound method). To ensure the completeness of our test we employed Equivalence Class Testing (ECT) and Boundary Value Testing (BVT) principles when designing our inputs. Below are the details regarding our input partitions and the rationale behind their selection.
 
 ### Range Intersect Test
 
