@@ -11,11 +11,17 @@
 
 # 1 Introduction
 
-Text…
+In this assignment, we created a JUnit test suite for two classes in JFree. Our creation process for the Range and DataUtilities class tests followed four phases:
+
+1. Familiarization of class methods.
+2. Generating unit test strategies. 
+3. Generating and writing test cases.
+4. Peer review and compilation of test suite. 
+
+This lab report compiles our unit testing strategies and the test cases that followed, including their results. 
+
 
 # 2 Detailed description of unit test strategy
-
-// including the input partitions you have designed
 
 ## Range
 
@@ -71,8 +77,6 @@ Our unit test strategy for the Range class in JFreeChart focused on these 6 func
 
 - **Large Range**: This input partition checks the method's ability to handle large values accurately.
 
-## NEED TO ADD ABES TESTS HERE
-
 ## Data Utilities
 
 While testing the functionality of the class methods, we again employed Equivalence Class Testing (ECT) and Boundary Value Testing (BVT) principles when designing our inputs. Below are the details regarding our input partitions and the rationale behind their selection.
@@ -125,8 +129,6 @@ Since both of these methods cover similar functionality, and our test strategies
 
 # 3 Test cases developed
 
-Text…
-
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
@@ -138,6 +140,8 @@ you have explained in the test strategy section //above
 **Test Method: testGetLengthWithVariousRanges**
 
 For this test, we employed the use of parameterized classes to collectively address both ECT and BVT and reduce code bloating. Each test targets a unique input partition.
+
+ALL TEST CASES PASSED
 
 **Partitions Covered**:
 
@@ -161,9 +165,11 @@ Initializes originalRange with a fixed range of 10 to 20 before each test.
 
 Sets originalRange to null after each test for cleanup.
 
+**Unless Specified assume a test case passes** 
+
 **Test Methods:**
 
-**expand_WithValidPositiveMargins_ShouldExpandRangeProperly**
+**expand\_WithValidPositiveMargins\_ShouldExpandRangeProperly (FAILED)**
 
 - Partition Covered (ECT): Valid positive margins.
 
@@ -175,7 +181,7 @@ Sets originalRange to null after each test for cleanup.
 
 - Partition Covered (ECT): Invalid Argument
 
-**expand_MinimalPositiveMargins_ShouldSlightlyExpandRange**
+**expand\_MinimalPositiveMargins\_ShouldSlightlyExpandRange (FAILED)**
 
 - Partition Covered (BVT): Minimal positive margins.
 
@@ -184,6 +190,8 @@ Sets originalRange to null after each test for cleanup.
 - Partition Covered (BVT): Large positive margins
 
 ### Class: RangeIntersectsTest
+
+**Unless Specified assume a test case passes** 
 
 **setUp() Method**: Initializes testRange with a fixed range of 10 to 20 before each test.
 
@@ -195,7 +203,7 @@ Sets originalRange to null after each test for cleanup.
 
 - Partition Covered (ECT): Intersecting Ranges.
 
-**intersects_WithFullyOutsideRange_LowerSide_ShouldReturnFalse**
+**intersects\_WithFullyOutsideRange\_LowerSide\_ShouldReturnFalse(FAILED)**
 
 - Partition Covered (ECT): Non-Intersecting Ranges (Outside) on the lower side.
 
@@ -211,7 +219,7 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 - Partition Covered (ECT/BVT): Edge-Case Intersections and Just Inside Bounds.
 - Verifies that ranges overlapping the lower boundary of the test range are accurately detected as intersecting.
 
-**intersects_WithOverlappingRange_UpperBound_ShouldReturnTrue**
+**intersects\_WithOverlappingRange\_UpperBound\_ShouldReturnTrue(FAILED)**
 
 - Partition Covered (ECT/BVT): Edge-Case Intersections and Just Inside Bounds.
 - Verifies that ranges overlapping the upper boundary of the test range are correctly identified as intersecting.
@@ -226,12 +234,12 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 - Partition Covered (BVT): Just Inside Bounds.
 - Verifies that a range barely inside the lower boundary is correctly flagged as intersecting.
 
-**intersects_JustInsideUpperBound_ShouldReturnTrue**
+**intersects\_JustInsideUpperBound\_ShouldReturnTrue(FAILED)**
 
 - Partition Covered (BVT): Just Inside Bounds.
 - Verifies that a range barely inside the upper boundary is accurately recognized as intersecting.
 
-**intersects_JustOutsideLowerBound_ShouldReturnFalse**
+**intersects\_JustOutsideLowerBound\_ShouldReturnFalse(FAILED)**
 
 - Partition Covered (BVT): Just Outside Bounds.
 - Verifies that a range just outside the lower boundary is identified as not intersecting.
@@ -241,69 +249,246 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 - Partition Covered (BVT): Just Outside Bounds.
 - Verifies that a range just outside the upper boundary is recognized as not intersecting.
 
+### RangeGetLowerBoundTest
+
+**Test Methods:**
+
+**getLowerBound_WithValidRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Lower bound of the range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for a valid range.
+
+**getLowerBound_WithNegativeInfinity_ReturnsNegativeInfinity (PASSED)**
+
+*   Partition Covered (ECT): Lower bound of the range.
+    
+*   Verifies that the getLowerBound() method returns negative infinity when the lower bound is set to Double.NEGATIVE_INFINITY.
+
+**testGetLowerBoundNonEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Non-empty range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for a non-empty range.
+
+**testGetLowerBoundEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Empty range.
+    
+*   Ensures that the getLowerBound() method returns the correct lower bound for an empty range.
+
+**testGetLowerBoundBoundaryLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is exactly at the boundary value.
+
+**testGetLowerBoundBoundaryJustAboveLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary just above lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is just above the boundary value.
+
+**testGetLowerBoundBoundaryJustBelowLower_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (BVT): Boundary just below lower.
+    
+*   Verifies that the getLowerBound() method returns the correct lower bound when it is just below the boundary value.
+
+
+### RangeGetUpperBoundTest
+
+**Test Methods:**
+
+**getUpperBound_WithValidRange_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Upper bound of the range.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound for a valid range.
+
+**getUpperBound_WithPositiveInfinity_ReturnsPositiveInfinity (FAILED)**
+
+*   Partition Covered (ECT): Upper bound of the range.
+    
+*   Verifies that the getUpperBound() method returns positive infinity when the upper bound is set to Double.POSITIVE_INFINITY.
+
+**testGetUpperBoundNonEmptyRange_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (ECT): Non-empty range.
+    
+*   Ensures that the getUpperBound() method returns the correct upper bound for a non-empty range.
+
+**testGetUpperBoundEmptyRange_ReturnsCorrectValue (PASSED)**
+
+*   Partition Covered (ECT): Empty range.
+    
+*   Ensures that the getUpperBound() method returns the correct upper bound for an empty range.
+
+**testGetUpperBoundBoundaryUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is exactly at the boundary value.
+
+**testGetUpperBoundBoundaryJustAboveUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary just above upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is just above the boundary value.
+
+**testGetUpperBoundBoundaryJustBelowUpper_ReturnsCorrectValue (FAILED)**
+
+*   Partition Covered (BVT): Boundary just below upper.
+    
+*   Verifies that the getUpperBound() method returns the correct upper bound when it is just below the boundary value.
+
+
 ## Org.Jfree.data.DataUtilities
 
 ### Class: DataUtilitiesCalculateColumnTotalTests
 
 **Test Methods:**
 
-**calculateColumnTotal_ForOnePositiveValues**
+**calculateColumnTotal_ForOnePositiveValues** (PASSED)
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
-**calculateColumnTotal_ForTwoPositiveValues**
+- Verifies that a single row of data can be summed. 
 
-- Partition Covered (ECT): MAKE STUFF UP
+**calculateColumnTotal_ForTwoPositiveValues** (PASSED)
 
-**calculateColumnTotal_ForThreeNegativeValues**
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Verifies that two rows of data can be summed. 
 
-**calculateColumnTotal_ForFourMixedValues**
+**calculateColumnTotal_ForThreeNegativeValues** (PASSED)
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT): Valid Input Data.
 
-**calculateColumnTotal_ForManyRows**
+- Verifies that negatives may be summed. 
 
-- Partition Covered (ECT): MAKE STUFF UP
+**calculateColumnTotal_ForFourMixedValues** (PASSED)
 
-**calculateColumnTotal_WithNullValues**
+- Partition Covered (ECT): Valid Input Data.
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Verifies that many mixed types of data are summed. 
 
-**calculateColumnTotal_ForEmptyMatrix**
+**calculateColumnTotal_ForManyRows** (PASSED)
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
 
-**calculateColumnTotal_WithLargeIndex**
+- Verifies that a large number of rows may be summed. 
 
-- Partition Covered (ECT): MAKE STUFF UP
+**calculateColumnTotal_WithNullValues** (FAILED)
 
-**calculateColumnTotal_ForOutOfBoundsIndexBelow**
+- Partition Covered (ECT): Invalid Input Data.
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Verifies that the sum is aborted, outputting zero.  
 
-**calculateColumnTotal_ForOutOfBoundsIndexAbove**
+**calculateColumnTotal_ForEmptyMatrix** (PASSED)
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that an empty Values2D sums to zero. 
+
+**calculateColumnTotal_WithLargeIndex** (PASSED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that it sums correctly at large indexes.
+
+**calculateColumnTotal_ForOutOfBoundsIndexBelow** (FAILED)
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
+
+**calculateColumnTotal_ForOutOfBoundsIndexAbove** (FAILED)
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
+### Class: DataUtilitiesCalculateRowTotalTests
+
+**Test Methods:**
+
+**CalculateRowTotal_ForOnePositiveValues** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a single row of data can be summed. 
+
+**CalculateRowTotal_ForTwoPositiveValues** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that two rows of data can be summed. 
+
+**CalculateRowTotal_ForThreeNegativeValues** (FAILED)
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that negatives may be summed. 
+
+**CalculateRowTotal_ForFourMixedValues** (FAILED)
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that many mixed types of data are summed. 
+
+**CalculateRowTotal_ForManyRows** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a large number of rows may be summed. 
+
+**CalculateRowTotal_WithNullValues** (FAILED)
+
+- Partition Covered (ECT): Invalid Input Data.
+
+- Verifies that the sum is aborted, outputting zero.  
+
+**CalculateRowTotal_ForEmptyMatrix** (PASSED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that an empty Values2D sums to zero. 
+
+**CalculateRowTotal_WithLargeIndex** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that it sums correctly at large indexes.
+
+**CalculateRowTotal_ForOutOfBoundsIndexBelow** (PASSED)
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
+
+**CalculateRowTotal_ForOutOfBoundsIndexAbove** (PASSED)
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
 
 ### Class: DataUtilitiesCreateNumberArray2DTest
 
 **Test Methods:**
 
-**testCreateNumberArray2D_OneByTwoPositive**
+**testCreateNumberArray2D_OneByTwoPositive** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
 - This test method checks if the method can create a 2D array of numbers that is 1x2 from two positive values.
 
-**testCreateNumberArray2D_ThreeByThreeMixed**
+**testCreateNumberArray2D_ThreeByThreeMixed** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
 - This test method checks if the method can create a 2D array of numbers that is 3x3 from three mixed values.
 
-**testCreateNumberArray2D_SixtyNineBySixtyNineValues**
+**testCreateNumberArray2D_SixtyNineBySixtyNineValues** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
@@ -315,13 +500,13 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 - This test method check if an exception is thrown when the input data is empty.
 
-**testCreateNumberArray2D_InvalidInput**
+**testCreateNumberArray2D_InvalidInput** (FAILED)
 
 - Partition Covered (ECT): Invalid Input Data
 
 - This test method checks if an exception is thrown when the input data is invalid.
 
-**testCreateNumberArray2D_BoundaryValues**
+**testCreateNumberArray2D_BoundaryValues** (FAILED)
 
 - Partition Covered (BVT): Maximum and Minimum Values
 
@@ -331,25 +516,25 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**testCreateNumberArray_ForOnePositiveValue**
+**testCreateNumberArray_ForOnePositiveValue** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
 - This test method checks if the method can create an array of numbers from a single positive value.
 
-**testCreateNumberArray_ForTwoNegativeValue**
+**testCreateNumberArray_ForTwoNegativeValue** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
 - This test method checks if the method can create an array of numbers from two negative values.
 
-**testCreateNumberArray_ThreePositive**
+**testCreateNumberArray_ThreePositive** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
 - This test method checks if the method can create an array of numbers from three positive values.
 
-**testCreateNumberArray_ForSixtyNineNumbers**
+**testCreateNumberArray_ForSixtyNineNumbers** (FAILED)
 
 - Partition Covered (ECT): Valid Input Data
 
@@ -361,15 +546,15 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 - This test method check if an exception is thrown when the input data is empty.
 
-**testCreateNumberArray_InvalidInput**
+**testCreateNumberArray_InvalidInput** (FAILED)
 
 - Partition Covered (ECT): Invalid Input Data
 
 - This test method checks if an exception is thrown when the input data is invalid.
 
-**testCreateNumberArray_BoundaryValues**
+**testCreateNumberArray_BoundaryValues** (FAILED)
 
-- Partition Covered (BVT): Maximum and Minimum Values
+- Partition Covered (BVT): Maximum and Minimum Values 
 
 - This test method checks if the method can create an array of numbers from the maximum and minimum values.
 
@@ -377,9 +562,47 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**calculateColumnTotal_ForOnePositiveValues**
+**getCumulativePercentages_ForOneValue** (FAILED)
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a single value is properly calculated to percent. 
+
+**getCumulativePercentages_ForTwoNegativeValues** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that two values are properly calculated to percent. 
+
+**getCumulativePercentages_ForThreePositiveValues** (FAILED)
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that three values are properly calculated to percent. 
+
+**getCumulativePercentages_ForFourMixedValues** (FAILED)
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that four mixed values are properly calculated to percent. 
+
+**getCumulativePercentages_ForLargeData** (FAILED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a large number of values are properly calculated to percent. 
+
+**getCumulativePercentages_WithEmptyData** (PASSED)
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that an empty KeyedValues is properly calculated to being empty. 
+
+**getCumulativePercentages_WithNullEntries** (FAILED)
+
+- Partition Covered (ECT/BVT): Invalid Input Data, Just Outside Bounds.
+
+- Verifies that the proper exception is thrown for invalid KeyedValues.
 
 # 4 How the team work/effort was divided and managed
 
@@ -388,10 +611,8 @@ We then evaluated our partner's test methods, ensuring that the tests adhered to
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
-I wanna talk about the pain of Mocks in here.
+A big challenge we were able to overcome was finding time to come together and discuss the tests each of us created, because communication is very important in the teamwork process this was a challenge we had to overcome. We also had initial difficulties understanding mocking but as we began to write our tests the reason for mocking became clearer and our understanding of the concept got better.
 
 # 6 Comments/feedback on the lab itself
 
-Text…
-They shoulda told us more about how to use Mocks.
+We found the lab document to be confusing for certain sections, particularly for the demo section and the requirements of the testing. For example, we found it unclear whether each student needed to demo a mocking test or if we needed to demo mocking tests in general. As well, we wished the lab had discussed a little more about mocking, as it was difficult to connect the concept of mocking from lectures to implementing it given only a single example which had no explanation. Other than that the lab did a good job in teaching the basics of writing ECT and BVT based tests. 
