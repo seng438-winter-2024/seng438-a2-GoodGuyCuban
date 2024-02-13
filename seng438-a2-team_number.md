@@ -348,7 +348,10 @@ We then evaluated our partner's test methods, ensuring that the tests adhered to
 Text…
 I wanna talk about the pain of Mocks in here. 
 
+A big challenge we were able to overcome was finding time to come together and discuss the tests each of us created, because communication is very important in the teamwork process this was a challenge we had to overcome. We also had initial difficulties understanding mocking but as we began to write our tests the reason for mocking became clearer and our understanding of the concept got better.
+
 # 6 Comments/feedback on the lab itself
 
 Text…
 They shoulda told us more about how to use Mocks. 
+We found the lab document to be confusing for certain sections, particularly for the demo section and the requirements of the testing. For example, we found it unclear whether each student needed to demo a mocking test or if we needed to demo mocking tests in general. Other than that the lab did a good job in teaching the basics of mocking and writing ECT and BVT based tests.
