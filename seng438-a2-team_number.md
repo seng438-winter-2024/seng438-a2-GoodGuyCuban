@@ -272,43 +272,126 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **calculateColumnTotal_ForOnePositiveValues**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a single row of data can be summed. 
 
 **calculateColumnTotal_ForTwoPositiveValues**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that two rows of data can be summed. 
 
 **calculateColumnTotal_ForThreeNegativeValues**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that negatives may be summed. 
 
 **calculateColumnTotal_ForFourMixedValues**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that many mixed types of data are summed. 
 
 **calculateColumnTotal_ForManyRows**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a large number of rows may be summed. 
 
 **calculateColumnTotal_WithNullValues**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT): Invalid Input Data.
+
+- Verifies that the sum is aborted, outputting zero.  
 
 **calculateColumnTotal_ForEmptyMatrix**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that an empty Values2D sums to zero. 
 
 **calculateColumnTotal_WithLargeIndex**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that it sums correctly at large indexes.
 
 **calculateColumnTotal_ForOutOfBoundsIndexBelow**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
 
 **calculateColumnTotal_ForOutOfBoundsIndexAbove**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
+### Class: DataUtilitiesCalculateRowTotalTests
+
+**Test Methods:**
+
+**CalculateRowTotal_ForOnePositiveValues**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a single row of data can be summed. 
+
+**CalculateRowTotal_ForTwoPositiveValues**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that two rows of data can be summed. 
+
+**CalculateRowTotal_ForThreeNegativeValues**
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that negatives may be summed. 
+
+**CalculateRowTotal_ForFourMixedValues**
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that many mixed types of data are summed. 
+
+**CalculateRowTotal_ForManyRows**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a large number of rows may be summed. 
+
+**CalculateRowTotal_WithNullValues**
+
+- Partition Covered (ECT): Invalid Input Data.
+
+- Verifies that the sum is aborted, outputting zero.  
+
+**CalculateRowTotal_ForEmptyMatrix**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that an empty Values2D sums to zero. 
+
+**CalculateRowTotal_WithLargeIndex**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds. 
+
+- Verifies that it sums correctly at large indexes.
+
+**CalculateRowTotal_ForOutOfBoundsIndexBelow**
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
+
+**CalculateRowTotal_ForOutOfBoundsIndexAbove**
+
+- Partition Covered (BVT): Just Outside Bounds. 
+
+- Verifies that the sum is aborted, outputting zero.  
 
 ### Class: DataUtilitiesCreateNumberArray2DTest
 
@@ -330,9 +413,49 @@ Ensures that ranges completely outside the lower bound of the test range are ide
 
 **Test Methods:**
 
-**calculateColumnTotal_ForOnePositiveValues**
+**getCumulativePercentages_ForOneValue**
 
-- Partition Covered (ECT): MAKE STUFF UP
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a single value is properly calculated to percent. 
+
+**getCumulativePercentages_ForTwoNegativeValues**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that two values are properly calculated to percent. 
+
+**getCumulativePercentages_ForThreePositiveValues**
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that three values are properly calculated to percent. 
+
+**getCumulativePercentages_ForFourMixedValues**
+
+- Partition Covered (ECT): Valid Input Data.
+
+- Verifies that four mixed values are properly calculated to percent. 
+
+**getCumulativePercentages_ForLargeData**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that a large number of values are properly calculated to percent. 
+
+**getCumulativePercentages_WithEmptyData**
+
+- Partition Covered (ECT/BVT): Valid Input Data, Just Inside Bounds.
+
+- Verifies that an empty KeyedValues is properly calculated to being empty. 
+
+# 4 How the team work/effort was divided and managed
+
+**getCumulativePercentages_WithNullEntries**
+
+- Partition Covered (ECT/BVT): Invalid Input Data, Just Outside Bounds.
+
+- Verifies that the proper exception is thrown for invalid KeyedValues.
 
 # 4 How the team work/effort was divided and managed
 
